@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cat listOfAlbums2015.txt | grep -A5000 -m1 -a YYYY | sed 's/|-/\n\n/g' | sed 's/ | style="text-align:center;"| / /g' | sed 's/| rowspan="[0-9]" style="text-align:center;"| //g' | grep -v -a '^!' | grep -m1 -a -B5000 '== Unscheduled and TBA ==' | sed '/^$/d' | sed 's/[ \t]*$//' | grep -v -a YYYY | grep -v -a 'Release date' | awk 'BEGIN{i=0;FS=" | ";}{if(/^ \|/){print i,$0;}else{print $0,i=$1" "$2;}}' | awk -F'<ref>' '{print $1}' | sed 's/<br\/>/ /g'
+
+
+
+

@@ -1,0 +1,3 @@
+awk 'BEGIN{i=0;FS=" | ";}{if(/^\|/){print i,$0;}else{print $0,i=$1" "$2;}}'
+
+$ sh albumCommandBash | sed 's/ style="text-align:center;"//g' | tr "[']|{}#!" " " | sed 's/style="width:[0-9][0-9]%;"//g' | sed 's/rowspan="[0-9]"//g' | sed 's/  / /g' | sed 's/   / | /g' | awk 'BEGIN {FS=" | ";} "$2 ~ /TBA/" {print "TBA" $3;}'
