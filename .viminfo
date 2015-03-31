@@ -25,42 +25,52 @@
 # Input Line History (newest to oldest):
 
 # Registers:
-""0	LINE	0
-				printf("%s %d\n", months[i], x);
-"1	LINE	0
-				"July", "August", "September", "October", "November", "December"};
+"0	LINE	0
+	      scanner.reset()
+""1	LINE	0
+	      scanner.reset()
 "2	LINE	0
-		char *months[] = {"January", "February", "March", "April", "May", "June",
+		
 "3	LINE	0
-	
+	      String album = scanner.next();
 "4	LINE	0
-	
-"5	LINE	0
 				"July", "August", "September", "October", "November", "December"};
+"5	LINE	0
+		char *months[] = {"January", "February", "March", "April", "May", "June",
 "6	LINE	0
-		cc ex13.c	-o ex13
-"7	LINE	0
-		cc ex12.c	-o ex12
-"8	LINE	0
-	CFLAGS=-Wall -g
-"9	LINE	0
 	
+"7	LINE	0
+	
+"8	LINE	0
+				"July", "August", "September", "October", "November", "December"};
+"9	LINE	0
+		cc ex13.c	-o ex13
 "-	CHAR	0
 		
 
 # File marks:
-'0  14  32  ~/organiser/dayGen.c
-'1  13  32  ~/organiser/dayGen.c
-'2  6  21  ~/organiser/Makefile
-'3  20  0  ~/organiser/dayGen.c
-'4  178  10  ~/ex17.c
-'5  49  10  ~/ex13.c
-'6  6  41  ~/ex13.c
-'7  28  17  ~/Makefile
-'8  56  0  ~/ex13.c
-'9  9  21  ~/ex12.c
+'0  55  93  ~/organiser/ReadWithScanner.java
+'1  52  29  ~/organiser/ReadWithScanner.java
+'2  14  16  ~/organiser/ReadWithScanner.java
+'3  74  1  ~/organiser/ReadWithScanner.java
+'4  12  61  ~/organiser/ReadWithScanner.java
+'5  48  26  ~/organiser/ReadWithScanner.java
+'6  12  66  ~/organiser/JavaOrganiserParser.java
+'7  1  529  ~/organiser/organiserCommand
+'8  14  32  ~/organiser/dayGen.c
+'9  13  32  ~/organiser/dayGen.c
 
 # Jumplist (newest first):
+-'  55  93  ~/organiser/ReadWithScanner.java
+-'  1  0  ~/organiser/ReadWithScanner.java
+-'  52  29  ~/organiser/ReadWithScanner.java
+-'  14  16  ~/organiser/ReadWithScanner.java
+-'  74  1  ~/organiser/ReadWithScanner.java
+-'  12  61  ~/organiser/ReadWithScanner.java
+-'  48  26  ~/organiser/ReadWithScanner.java
+-'  12  66  ~/organiser/JavaOrganiserParser.java
+-'  1  0  ~/organiser/JavaOrganiserParser.java
+-'  1  529  ~/organiser/organiserCommand
 -'  14  32  ~/organiser/dayGen.c
 -'  9  0  ~/organiser/dayGen.c
 -'  10  0  ~/organiser/dayGen.c
@@ -147,20 +157,44 @@
 -'  3  0  ~/albumCommandBash
 -'  1  0  ~/albumCommandBash
 -'  4  0  ~/albumCommandBash
--'  3  0  ~/albumCommandBash
--'  1  0  ~/albumCommandBash
--'  4  0  ~/albumCommandBash
--'  3  0  ~/albumCommandBash
--'  1  0  ~/albumCommandBash
--'  4  0  ~/albumCommandBash
--'  3  0  ~/albumCommandBash
--'  1  0  ~/albumCommandBash
--'  4  0  ~/albumCommandBash
--'  3  0  ~/albumCommandBash
--'  1  0  ~/albumCommandBash
--'  4  0  ~/albumCommandBash
 
 # History of marks within files (newest to oldest):
+
+> ~/organiser/ReadWithScanner.java
+	"	55	93
+	^	55	94
+	.	55	93
+	+	48	26
+	+	12	62
+	+	51	17
+	+	52	18
+	+	55	78
+	+	53	7
+	+	52	0
+	+	53	0
+	+	53	0
+	+	54	5
+	+	53	19
+	+	54	35
+	+	55	82
+	+	52	5
+	+	52	29
+	+	55	93
+	+	55	0
+	+	55	93
+
+> ~/organiser/JavaOrganiserParser.java
+	"	12	66
+	^	12	67
+	.	12	66
+	+	72	0
+	+	12	66
+
+> ~/organiser/organiserCommand
+	"	1	529
+	^	1	530
+	.	1	522
+	+	1	522
 
 > ~/organiser/dayGen.c
 	"	14	32
