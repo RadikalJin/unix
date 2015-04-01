@@ -4,6 +4,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.Scanner;
+import java.util.*;
 
 /** Assumes UTF-8 encoding. JDK 7+. */
 public class ReadWithScanner {
@@ -25,11 +26,17 @@ public class ReadWithScanner {
   
   /** Template method that calls {@link #processLine(String)}.  */
   public final void processLineByLine() throws IOException {
+	Map<String, AlbumRecord> map = new HashMap<String, AlbumRecord>();
     try (Scanner scanner =  new Scanner(fFilePath, ENCODING.name())){
       while (scanner.hasNextLine()){
-        processLine(scanner.nextLine());
+        AlbumRecord record = processLine(scanner.nextLine());
+	map.put(record.getDate(), record);
+	log(record.getDate());
       }      
     }
+	log("Got result from map for March 13: " + map.get("March 13").getArtist());
+	log("Got result from map for May 19: " + map.get("May 19").getArtist());
+	log("Got result from map for July 31: " + map.get("July 31").getArtist());
   }
   
   /** 
@@ -42,20 +49,23 @@ public class ReadWithScanner {
    <tt>disposition =  "grumpy"</tt>
    <tt>this is the name = this is the value</tt>
   */
-  protected void processLine(String aLine){
+  public AlbumRecord processLine(String aLine){
     //use a second Scanner to parse the content of each line 
     Scanner scanner = new Scanner(aLine);
     scanner.useDelimiter("@");
     if (scanner.hasNext()){
       //assumes the line has a certain structure
-      String date = scanner.next();
+      String date = scanner.next().trim();
       scanner.useDelimiter("\\|");
-      String artist = scanner.next();
-      String album = scanner.next();
-      log("Date is : " + quote(date.trim()) + ", Artist is " + quote(artist.trim().substring(2)) + "and Album is : " + quote(album.trim()));
+      String artist = scanner.next().trim().substring(2);
+      String album = scanner.next().trim();
+      log("Date is : " + quote(date) + ", Artist is " + quote(artist) + "and Album is : " + quote(album));
+	AlbumRecord record = new AlbumRecord(date, artist, album);
+	return record; 
     }
     else {
       log("Empty or invalid line. Unable to process.");
+	return new AlbumRecord("", "", "");
     }
   }
   
@@ -71,4 +81,31 @@ public class ReadWithScanner {
     String QUOTE = "'";
     return QUOTE + aText + QUOTE;
   }
-} 
+}
+
+
+final class AlbumRecord {
+	private final String date; 
+	private final String artist; 
+	private final String album; 
+
+	public AlbumRecord(String date, String artist, String album) {
+		this.date = date;
+		this.artist = artist;
+		this.album = album;
+	}
+
+	public String getDate() {
+		return date;
+	}
+
+
+	public String getArtist() {
+		return artist;
+	}
+
+	public String getAlbum() {
+		return album;
+	}
+
+}
