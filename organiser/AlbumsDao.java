@@ -83,13 +83,15 @@ public class ReadWithScanner {
 }
 
 
-final class AlbumRecord {
-	private final String date; 
-	private final String artist; 
-	private final String album; 
+final class OrganiserEntry {
+	private final String entryDate; 
+	private final String dueDate; 
+	private final String heading; 
+	private final String content; 
 
-	public AlbumRecord(String date, String artist, String album) {
-		this.date = date;
+	public AlbumRecord(String entryDate, String dueDate, String heading, String content) {
+		this.entryDate = entryDate;
+		this.entryDate = entryDate;
 		this.artist = artist;
 		this.album = album;
 	}
